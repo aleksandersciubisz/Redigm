@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600;700;800&display=swap');
+
+:root {
+	--max-width: 1300px;
+	--min-width: 320px;
+	/* Colors */
+	--white: #ffffff;
+	--black: #000000;
+
+	--bg: #030918;
+	--light: #f7f8fc;
+	--gray: #c2c1c1;
+
+	--g1: #00ffa9;
+	--g2: #04c6c5;
+	--g3: #0d4dff;
+
+	/* Fonts sizes */
+	--h1-font: clamp(6.85rem, 5.7332rem + 5.5836vw, 10.27rem);
+	--h1-font-min: clamp(4.234rem, 3.6064rem + 3.1378vw, 6.352rem);
+	--h2-font: clamp(2.617rem, 2.2291rem + 1.9393vw, 3.926rem);
+	--h3-font: clamp(1.618rem, 1.3783rem + 1.1985vw, 2.427rem);
+	--h4-font: clamp(1.1rem, 0.95rem + 0.75vw, 1.7rem);
+	--normal-font: clamp(0.8rem, 0.725rem + 0.375vw, 1.1rem);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Albert Sans', sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: auto;
+	width: 100%;
+	justify-content: flex-start;
+	background-color: var(--bg);
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	height: auto;
+	min-height: 300vh;
+}
+
+section {
+	display: grid;
+	grid-template-columns: 3rem 1fr 1fr 1fr 1fr 1fr 3rem;
+	grid-template-rows: repeat(5, 1fr);
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	height: auto;
+	min-height: 100vh;
+}
+
+.separator {
+	min-height: 20vh;
+	height: 25vh;
+}
+
+section div {
+	/* border: 1px red dotted; */
+	width: 100%;
+	height: 100%;
+}
+
+section > div:nth-of-type(1) {
+	grid-column: 1/2;
+	grid-row: 1/6;
+}
+
+section > div:nth-of-type(2) {
+	grid-column: 7/8;
+	grid-row: 1/6;
+}
+
+a {
+	text-decoration: none;
+	font-size: var(--normal-font);
+	font-weight: 400;
+	letter-spacing: 0.03em;
+	color: var(--light);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+a span {
+	font-size: var(--h4-font);
+	margin-left: 3px;
+	margin-bottom: 1px;
+}
+
+.linkGradient a:hover {
+	background: -webkit-linear-gradient(45deg, var(--g3), var(--g2), var(--g1));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+a:hover span {
+	padding-left: 3px;
+	transition: 0.1s ease-in;
+	color: var(--gray);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+p {
+	text-align: left;
+	padding: 0.3rem 0;
+	color: var(--light);
+	width: auto;
+	z-index: 10;
+}
+
+h1 {
+	font-size: var(--h1-font);
+	font-weight: 800;
+	letter-spacing: 0.06em;
+}
+
+h2 {
+	font-size: var(--h2-font);
+	font-weight: 700;
+	letter-spacing: 0.05em;
+}
+
+h3 {
+	font-size: var(--h3-font);
+	font-weight: 500;
+	letter-spacing: 0.04em;
+}
+
+h4 {
+	font-size: var(--h4-font);
+	font-weight: 500;
+	letter-spacing: 0.04em;
+}
+
+p {
+	font-size: var(--normal-font);
+	font-weight: 400;
+	letter-spacing: 0.03em;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.blur {
+	backdrop-filter: blur(10px);
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+ul {
+	list-style: none;
+}
+
+canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: -1;
+	opacity: 0;
+	animation: fadeIn 0.5s ease-in-out 2s;
+	animation-fill-mode: forwards;
+}
